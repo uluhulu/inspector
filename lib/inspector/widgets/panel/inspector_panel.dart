@@ -47,8 +47,6 @@ class _InspectorPanelState extends State<InspectorPanel> {
 
   bool get _isZoomEnabled => widget.onZoomStateChanged != null;
 
-  bool get _isTestStagesEnabled => widget.isTestStagesEnabled;
-
   void _toggleInspectorState() {
     assert(_isInspectorEnabled);
     widget.onInspectorStateChanged!(!widget.isInspectorEnabled);
@@ -158,7 +156,7 @@ class _InspectorPanelState extends State<InspectorPanel> {
                       : const Icon(Icons.zoom_in),
                 ),
               ],
-              if (_isTestStagesEnabled) ...[
+              if (widget.isTestStagesEnabled) ...[
                 const SizedBox(height: 8.0),
                 FloatingActionButton(
                   backgroundColor: Colors.white,
